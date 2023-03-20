@@ -21,7 +21,10 @@
         </div>
         <h4 style="text-align: center; color: red">Click here to go to <a href="/Home/Index">Home Page.</a></h4>
 
-
+        @{
+            <h1>Table Number: @ViewData["TableNo"]</h1>
+            <h1> TempData Table No: @TempData["TableNo"]</h1>
+        }
     </div>
 </body>
 </html>

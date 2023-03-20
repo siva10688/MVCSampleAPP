@@ -57,12 +57,33 @@ namespace MVCSampleAPP.Controllers
 
         public ViewResult Mission()
         {
+            ViewBag.Name = "Bhavitha";
             return View("~/Views/Test/Mission.cshtml");
         }
 
         public ViewResult About()
         {
             return View();
+        }
+
+        public ViewResult ThirdTable()
+        {
+            ViewData["TableNo"] = 3;
+            TempData["TableNo"] = 3;
+            return View();
+            //return RedirectToAction("About");
+        }
+
+        public ViewResult ViewStudent()
+        {
+            ViewBag.student = new Student
+            {
+                Name = "Raju",
+                Age = 34,
+                MobileNo = "9966578456",
+                Address = "Guntur"
+            };
+            return View("Student");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
